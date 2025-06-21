@@ -1,4 +1,4 @@
-// source: protos/twofa_service.proto
+// source: twofa_service.proto
 /**
  * @fileoverview
  * @enhanceable

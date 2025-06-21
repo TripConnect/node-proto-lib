@@ -2,117 +2,117 @@
 
 'use strict';
 var grpc = require('@grpc/grpc-js');
-var protos_chat_service_pb = require('../protos/chat_service_pb.js');
+var chat_service_pb = require('./chat_service_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 
 function serialize_backend_chat_service_ChatMessage(arg) {
-  if (!(arg instanceof protos_chat_service_pb.ChatMessage)) {
+  if (!(arg instanceof chat_service_pb.ChatMessage)) {
     throw new Error('Expected argument of type backend.chat_service.ChatMessage');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_ChatMessage(buffer_arg) {
-  return protos_chat_service_pb.ChatMessage.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.ChatMessage.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_ChatMessages(arg) {
-  if (!(arg instanceof protos_chat_service_pb.ChatMessages)) {
+  if (!(arg instanceof chat_service_pb.ChatMessages)) {
     throw new Error('Expected argument of type backend.chat_service.ChatMessages');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_ChatMessages(buffer_arg) {
-  return protos_chat_service_pb.ChatMessages.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.ChatMessages.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_Conversation(arg) {
-  if (!(arg instanceof protos_chat_service_pb.Conversation)) {
+  if (!(arg instanceof chat_service_pb.Conversation)) {
     throw new Error('Expected argument of type backend.chat_service.Conversation');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_Conversation(buffer_arg) {
-  return protos_chat_service_pb.Conversation.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.Conversation.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_Conversations(arg) {
-  if (!(arg instanceof protos_chat_service_pb.Conversations)) {
+  if (!(arg instanceof chat_service_pb.Conversations)) {
     throw new Error('Expected argument of type backend.chat_service.Conversations');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_Conversations(buffer_arg) {
-  return protos_chat_service_pb.Conversations.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.Conversations.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_CreateChatMessageRequest(arg) {
-  if (!(arg instanceof protos_chat_service_pb.CreateChatMessageRequest)) {
+  if (!(arg instanceof chat_service_pb.CreateChatMessageRequest)) {
     throw new Error('Expected argument of type backend.chat_service.CreateChatMessageRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_CreateChatMessageRequest(buffer_arg) {
-  return protos_chat_service_pb.CreateChatMessageRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.CreateChatMessageRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_CreateConversationRequest(arg) {
-  if (!(arg instanceof protos_chat_service_pb.CreateConversationRequest)) {
+  if (!(arg instanceof chat_service_pb.CreateConversationRequest)) {
     throw new Error('Expected argument of type backend.chat_service.CreateConversationRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_CreateConversationRequest(buffer_arg) {
-  return protos_chat_service_pb.CreateConversationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.CreateConversationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_FindConversationRequest(arg) {
-  if (!(arg instanceof protos_chat_service_pb.FindConversationRequest)) {
+  if (!(arg instanceof chat_service_pb.FindConversationRequest)) {
     throw new Error('Expected argument of type backend.chat_service.FindConversationRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_FindConversationRequest(buffer_arg) {
-  return protos_chat_service_pb.FindConversationRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.FindConversationRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_GetChatMessagesRequest(arg) {
-  if (!(arg instanceof protos_chat_service_pb.GetChatMessagesRequest)) {
+  if (!(arg instanceof chat_service_pb.GetChatMessagesRequest)) {
     throw new Error('Expected argument of type backend.chat_service.GetChatMessagesRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_GetChatMessagesRequest(buffer_arg) {
-  return protos_chat_service_pb.GetChatMessagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.GetChatMessagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_SearchChatMessagesRequest(arg) {
-  if (!(arg instanceof protos_chat_service_pb.SearchChatMessagesRequest)) {
+  if (!(arg instanceof chat_service_pb.SearchChatMessagesRequest)) {
     throw new Error('Expected argument of type backend.chat_service.SearchChatMessagesRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_SearchChatMessagesRequest(buffer_arg) {
-  return protos_chat_service_pb.SearchChatMessagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.SearchChatMessagesRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_SearchConversationsRequest(arg) {
-  if (!(arg instanceof protos_chat_service_pb.SearchConversationsRequest)) {
+  if (!(arg instanceof chat_service_pb.SearchConversationsRequest)) {
     throw new Error('Expected argument of type backend.chat_service.SearchConversationsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_backend_chat_service_SearchConversationsRequest(buffer_arg) {
-  return protos_chat_service_pb.SearchConversationsRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return chat_service_pb.SearchConversationsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -121,8 +121,8 @@ var ChatServiceService = exports.ChatServiceService = {
     path: '/backend.chat_service.ChatService/CreateConversation',
     requestStream: false,
     responseStream: false,
-    requestType: protos_chat_service_pb.CreateConversationRequest,
-    responseType: protos_chat_service_pb.Conversation,
+    requestType: chat_service_pb.CreateConversationRequest,
+    responseType: chat_service_pb.Conversation,
     requestSerialize: serialize_backend_chat_service_CreateConversationRequest,
     requestDeserialize: deserialize_backend_chat_service_CreateConversationRequest,
     responseSerialize: serialize_backend_chat_service_Conversation,
@@ -132,8 +132,8 @@ var ChatServiceService = exports.ChatServiceService = {
     path: '/backend.chat_service.ChatService/FindConversation',
     requestStream: false,
     responseStream: false,
-    requestType: protos_chat_service_pb.FindConversationRequest,
-    responseType: protos_chat_service_pb.Conversation,
+    requestType: chat_service_pb.FindConversationRequest,
+    responseType: chat_service_pb.Conversation,
     requestSerialize: serialize_backend_chat_service_FindConversationRequest,
     requestDeserialize: deserialize_backend_chat_service_FindConversationRequest,
     responseSerialize: serialize_backend_chat_service_Conversation,
@@ -143,8 +143,8 @@ var ChatServiceService = exports.ChatServiceService = {
     path: '/backend.chat_service.ChatService/SearchConversations',
     requestStream: false,
     responseStream: false,
-    requestType: protos_chat_service_pb.SearchConversationsRequest,
-    responseType: protos_chat_service_pb.Conversations,
+    requestType: chat_service_pb.SearchConversationsRequest,
+    responseType: chat_service_pb.Conversations,
     requestSerialize: serialize_backend_chat_service_SearchConversationsRequest,
     requestDeserialize: deserialize_backend_chat_service_SearchConversationsRequest,
     responseSerialize: serialize_backend_chat_service_Conversations,
@@ -154,8 +154,8 @@ var ChatServiceService = exports.ChatServiceService = {
     path: '/backend.chat_service.ChatService/CreateChatMessage',
     requestStream: false,
     responseStream: false,
-    requestType: protos_chat_service_pb.CreateChatMessageRequest,
-    responseType: protos_chat_service_pb.ChatMessage,
+    requestType: chat_service_pb.CreateChatMessageRequest,
+    responseType: chat_service_pb.ChatMessage,
     requestSerialize: serialize_backend_chat_service_CreateChatMessageRequest,
     requestDeserialize: deserialize_backend_chat_service_CreateChatMessageRequest,
     responseSerialize: serialize_backend_chat_service_ChatMessage,
@@ -165,8 +165,8 @@ var ChatServiceService = exports.ChatServiceService = {
     path: '/backend.chat_service.ChatService/GetChatMessages',
     requestStream: false,
     responseStream: false,
-    requestType: protos_chat_service_pb.GetChatMessagesRequest,
-    responseType: protos_chat_service_pb.ChatMessages,
+    requestType: chat_service_pb.GetChatMessagesRequest,
+    responseType: chat_service_pb.ChatMessages,
     requestSerialize: serialize_backend_chat_service_GetChatMessagesRequest,
     requestDeserialize: deserialize_backend_chat_service_GetChatMessagesRequest,
     responseSerialize: serialize_backend_chat_service_ChatMessages,
@@ -176,8 +176,8 @@ var ChatServiceService = exports.ChatServiceService = {
     path: '/backend.chat_service.ChatService/SearchChatMessages',
     requestStream: false,
     responseStream: false,
-    requestType: protos_chat_service_pb.SearchChatMessagesRequest,
-    responseType: protos_chat_service_pb.ChatMessages,
+    requestType: chat_service_pb.SearchChatMessagesRequest,
+    responseType: chat_service_pb.ChatMessages,
     requestSerialize: serialize_backend_chat_service_SearchChatMessagesRequest,
     requestDeserialize: deserialize_backend_chat_service_SearchChatMessagesRequest,
     responseSerialize: serialize_backend_chat_service_ChatMessages,

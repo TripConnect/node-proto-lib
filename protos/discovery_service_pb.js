@@ -1,4 +1,4 @@
-// source: protos/discovery_service.proto
+// source: discovery_service.proto
 /**
  * @fileoverview
  * @enhanceable

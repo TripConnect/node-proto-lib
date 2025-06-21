@@ -1,5 +1,5 @@
 // package: backend.twofa_service
-// file: protos/twofa_service.proto
+// file: twofa_service.proto
 
 /* tslint:disable */
 /* eslint-disable */

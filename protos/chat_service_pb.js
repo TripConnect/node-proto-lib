@@ -1,4 +1,4 @@
-// source: protos/chat_service.proto
+// source: chat_service.proto
 /**
  * @fileoverview
  * @enhanceable

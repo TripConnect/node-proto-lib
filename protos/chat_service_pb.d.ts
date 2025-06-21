@@ -1,5 +1,5 @@
 // package: backend.chat_service
-// file: protos/chat_service.proto
+// file: chat_service.proto
 
 /* tslint:disable */
 /* eslint-disable */

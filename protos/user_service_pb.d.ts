@@ -1,5 +1,5 @@
 // package: backend.user_service
-// file: protos/user_service.proto
+// file: user_service.proto
 
 /* tslint:disable */
 /* eslint-disable */

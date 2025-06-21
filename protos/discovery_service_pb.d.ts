@@ -1,5 +1,5 @@
 // package: backend.discovery_service
-// file: protos/discovery_service.proto
+// file: discovery_service.proto
 
 /* tslint:disable */
 /* eslint-disable */
