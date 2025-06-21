@@ -1,0 +1,9 @@
+# common nodejs gitignore
+node_modules
+build
+npm-debug.log
+.env
+.DS_Store
+
+# proto storage repo
+proto-storage
