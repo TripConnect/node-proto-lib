@@ -55,3 +55,14 @@ git add .
 git commit -m "build: something"
 git push
 ```
+
+# Convention
+## gRPC
+**Naming conventions**  
+- Find: return one item by id
+- Get: return multiple items by ids with pagination
+- Search: return multiple items by combined non-id conditions
+- Create: create new item and returns  
+
+**Style guide**  
+Following the official [documentation](https://protobuf.dev/programming-guides/style/)
