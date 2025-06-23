@@ -124,8 +124,8 @@ export namespace Validate2faRequest {
 export class Validate2faResponse extends jspb.Message { 
     getSuccess(): boolean;
     setSuccess(value: boolean): Validate2faResponse;
-    getStatus(): string;
-    setStatus(value: string): Validate2faResponse;
+    getStatus(): ValidationStatus;
+    setStatus(value: ValidationStatus): Validate2faResponse;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): Validate2faResponse.AsObject;
@@ -140,6 +140,11 @@ export class Validate2faResponse extends jspb.Message {
 export namespace Validate2faResponse {
     export type AsObject = {
         success: boolean,
-        status: string,
+        status: ValidationStatus,
     }
+}
+
+export enum ValidationStatus {
+    INVALID = 0,
+    VALID = 1,
 }
