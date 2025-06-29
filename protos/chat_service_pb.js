@@ -2232,10 +2232,11 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.toObject = funct
  */
 proto.backend.chat_service.SearchConversationsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    term: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    pageNumber: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    pageSize: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    term: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    pageNumber: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    pageSize: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -2273,18 +2274,22 @@ proto.backend.chat_service.SearchConversationsRequest.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 2:
       var value = /** @type {!proto.backend.chat_service.ConversationType} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setTerm(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageNumber(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPageSize(value);
       break;
@@ -2317,31 +2322,38 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.serializeBinary 
  */
 proto.backend.chat_service.SearchConversationsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {!proto.backend.chat_service.ConversationType} */ (jspb.Message.getField(message, 1));
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {!proto.backend.chat_service.ConversationType} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeEnum(
-      1,
+      2,
       f
     );
   }
   f = message.getTerm();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      3,
       f
     );
   }
   f = message.getPageNumber();
   if (f !== 0) {
     writer.writeInt32(
-      3,
+      4,
       f
     );
   }
   f = message.getPageSize();
   if (f !== 0) {
     writer.writeInt32(
-      4,
+      5,
       f
     );
   }
@@ -2349,11 +2361,29 @@ proto.backend.chat_service.SearchConversationsRequest.serializeBinaryToWriter = 
 
 
 /**
- * optional ConversationType type = 1;
+ * optional string user_id = 1;
+ * @return {string}
+ */
+proto.backend.chat_service.SearchConversationsRequest.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
+ */
+proto.backend.chat_service.SearchConversationsRequest.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional ConversationType type = 2;
  * @return {!proto.backend.chat_service.ConversationType}
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.getType = function() {
-  return /** @type {!proto.backend.chat_service.ConversationType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {!proto.backend.chat_service.ConversationType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -2362,7 +2392,7 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.getType = functi
  * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.setType = function(value) {
-  return jspb.Message.setField(this, 1, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -2371,7 +2401,7 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.setType = functi
  * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.clearType = function() {
-  return jspb.Message.setField(this, 1, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -2380,16 +2410,16 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.clearType = func
  * @return {boolean}
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.hasType = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string term = 2;
+ * optional string term = 3;
  * @return {string}
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.getTerm = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -2398,33 +2428,15 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.getTerm = functi
  * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.setTerm = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional int32 page_number = 3;
+ * optional int32 page_number = 4;
  * @return {number}
  */
 proto.backend.chat_service.SearchConversationsRequest.prototype.getPageNumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
- */
-proto.backend.chat_service.SearchConversationsRequest.prototype.setPageNumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional int32 page_size = 4;
- * @return {number}
- */
-proto.backend.chat_service.SearchConversationsRequest.prototype.getPageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -2433,8 +2445,26 @@ proto.backend.chat_service.SearchConversationsRequest.prototype.getPageSize = fu
  * @param {number} value
  * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
  */
-proto.backend.chat_service.SearchConversationsRequest.prototype.setPageSize = function(value) {
+proto.backend.chat_service.SearchConversationsRequest.prototype.setPageNumber = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int32 page_size = 5;
+ * @return {number}
+ */
+proto.backend.chat_service.SearchConversationsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.backend.chat_service.SearchConversationsRequest} returns this
+ */
+proto.backend.chat_service.SearchConversationsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

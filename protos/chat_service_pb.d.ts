@@ -267,6 +267,8 @@ export namespace Conversation {
 }
 
 export class SearchConversationsRequest extends jspb.Message { 
+    getUserId(): string;
+    setUserId(value: string): SearchConversationsRequest;
 
     hasType(): boolean;
     clearType(): void;
@@ -291,6 +293,7 @@ export class SearchConversationsRequest extends jspb.Message {
 
 export namespace SearchConversationsRequest {
     export type AsObject = {
+        userId: string,
         type?: ConversationType,
         term: string,
         pageNumber: number,
