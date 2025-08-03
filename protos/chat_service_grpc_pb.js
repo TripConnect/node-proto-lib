@@ -5,17 +5,6 @@ var grpc = require('@grpc/grpc-js');
 var chat_service_pb = require('./chat_service_pb.js');
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 
-function serialize_backend_chat_service_ChatMessage(arg) {
-  if (!(arg instanceof chat_service_pb.ChatMessage)) {
-    throw new Error('Expected argument of type backend.chat_service.ChatMessage');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_backend_chat_service_ChatMessage(buffer_arg) {
-  return chat_service_pb.ChatMessage.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_backend_chat_service_ChatMessages(arg) {
   if (!(arg instanceof chat_service_pb.ChatMessages)) {
     throw new Error('Expected argument of type backend.chat_service.ChatMessages');
@@ -47,6 +36,17 @@ function serialize_backend_chat_service_Conversations(arg) {
 
 function deserialize_backend_chat_service_Conversations(buffer_arg) {
   return chat_service_pb.Conversations.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_backend_chat_service_CreateChatMessageAck(arg) {
+  if (!(arg instanceof chat_service_pb.CreateChatMessageAck)) {
+    throw new Error('Expected argument of type backend.chat_service.CreateChatMessageAck');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_backend_chat_service_CreateChatMessageAck(buffer_arg) {
+  return chat_service_pb.CreateChatMessageAck.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_backend_chat_service_CreateChatMessageRequest(arg) {
@@ -155,11 +155,11 @@ var ChatServiceService = exports.ChatServiceService = {
     requestStream: false,
     responseStream: false,
     requestType: chat_service_pb.CreateChatMessageRequest,
-    responseType: chat_service_pb.ChatMessage,
+    responseType: chat_service_pb.CreateChatMessageAck,
     requestSerialize: serialize_backend_chat_service_CreateChatMessageRequest,
     requestDeserialize: deserialize_backend_chat_service_CreateChatMessageRequest,
-    responseSerialize: serialize_backend_chat_service_ChatMessage,
-    responseDeserialize: deserialize_backend_chat_service_ChatMessage,
+    responseSerialize: serialize_backend_chat_service_CreateChatMessageAck,
+    responseDeserialize: deserialize_backend_chat_service_CreateChatMessageAck,
   },
   getChatMessages: {
     path: '/backend.chat_service.ChatService/GetChatMessages',

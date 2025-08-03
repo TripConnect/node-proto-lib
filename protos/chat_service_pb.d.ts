@@ -42,6 +42,26 @@ export namespace ChatMessage {
     }
 }
 
+export class CreateChatMessageAck extends jspb.Message { 
+    getCorrelationId(): string;
+    setCorrelationId(value: string): CreateChatMessageAck;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): CreateChatMessageAck.AsObject;
+    static toObject(includeInstance: boolean, msg: CreateChatMessageAck): CreateChatMessageAck.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: CreateChatMessageAck, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): CreateChatMessageAck;
+    static deserializeBinaryFromReader(message: CreateChatMessageAck, reader: jspb.BinaryReader): CreateChatMessageAck;
+}
+
+export namespace CreateChatMessageAck {
+    export type AsObject = {
+        correlationId: string,
+    }
+}
+
 export class FindConversationRequest extends jspb.Message { 
     getConversationId(): string;
     setConversationId(value: string): FindConversationRequest;
