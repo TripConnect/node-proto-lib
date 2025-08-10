@@ -296,7 +296,8 @@ proto.backend.chat_service.ChatMessage.toObject = function(includeInstance, msg)
     conversationId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fromUserId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     content: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    createdAt: (f = msg.getCreatedAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    sentTime: (f = msg.getSentTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -352,7 +353,12 @@ proto.backend.chat_service.ChatMessage.deserializeBinaryFromReader = function(ms
     case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreatedAt(value);
+      msg.setSentTime(value);
+      break;
+    case 6:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreateTime(value);
       break;
     default:
       reader.skipField();
@@ -411,10 +417,18 @@ proto.backend.chat_service.ChatMessage.serializeBinaryToWriter = function(messag
       f
     );
   }
-  f = message.getCreatedAt();
+  f = message.getSentTime();
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getCreateTime();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -495,10 +509,10 @@ proto.backend.chat_service.ChatMessage.prototype.setContent = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp created_at = 5;
+ * optional google.protobuf.Timestamp sent_time = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.backend.chat_service.ChatMessage.prototype.getCreatedAt = function() {
+proto.backend.chat_service.ChatMessage.prototype.getSentTime = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
 };
@@ -508,7 +522,7 @@ proto.backend.chat_service.ChatMessage.prototype.getCreatedAt = function() {
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.backend.chat_service.ChatMessage} returns this
 */
-proto.backend.chat_service.ChatMessage.prototype.setCreatedAt = function(value) {
+proto.backend.chat_service.ChatMessage.prototype.setSentTime = function(value) {
   return jspb.Message.setWrapperField(this, 5, value);
 };
 
@@ -517,8 +531,8 @@ proto.backend.chat_service.ChatMessage.prototype.setCreatedAt = function(value) 
  * Clears the message field making it undefined.
  * @return {!proto.backend.chat_service.ChatMessage} returns this
  */
-proto.backend.chat_service.ChatMessage.prototype.clearCreatedAt = function() {
-  return this.setCreatedAt(undefined);
+proto.backend.chat_service.ChatMessage.prototype.clearSentTime = function() {
+  return this.setSentTime(undefined);
 };
 
 
@@ -526,8 +540,45 @@ proto.backend.chat_service.ChatMessage.prototype.clearCreatedAt = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.backend.chat_service.ChatMessage.prototype.hasCreatedAt = function() {
+proto.backend.chat_service.ChatMessage.prototype.hasSentTime = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Timestamp create_time = 6;
+ * @return {?proto.google.protobuf.Timestamp}
+ */
+proto.backend.chat_service.ChatMessage.prototype.getCreateTime = function() {
+  return /** @type{?proto.google.protobuf.Timestamp} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.backend.chat_service.ChatMessage} returns this
+*/
+proto.backend.chat_service.ChatMessage.prototype.setCreateTime = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.backend.chat_service.ChatMessage} returns this
+ */
+proto.backend.chat_service.ChatMessage.prototype.clearCreateTime = function() {
+  return this.setCreateTime(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.backend.chat_service.ChatMessage.prototype.hasCreateTime = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

@@ -17,10 +17,15 @@ export class ChatMessage extends jspb.Message {
     getContent(): string;
     setContent(value: string): ChatMessage;
 
-    hasCreatedAt(): boolean;
-    clearCreatedAt(): void;
-    getCreatedAt(): google_protobuf_timestamp_pb.Timestamp | undefined;
-    setCreatedAt(value?: google_protobuf_timestamp_pb.Timestamp): ChatMessage;
+    hasSentTime(): boolean;
+    clearSentTime(): void;
+    getSentTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setSentTime(value?: google_protobuf_timestamp_pb.Timestamp): ChatMessage;
+
+    hasCreateTime(): boolean;
+    clearCreateTime(): void;
+    getCreateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+    setCreateTime(value?: google_protobuf_timestamp_pb.Timestamp): ChatMessage;
 
     serializeBinary(): Uint8Array;
     toObject(includeInstance?: boolean): ChatMessage.AsObject;
@@ -38,7 +43,8 @@ export namespace ChatMessage {
         conversationId: string,
         fromUserId: string,
         content: string,
-        createdAt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        sentTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+        createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     }
 }
 
