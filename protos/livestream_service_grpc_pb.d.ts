@@ -8,15 +8,15 @@ import * as grpc from "@grpc/grpc-js";
 import * as livestream_service_pb from "./livestream_service_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-interface ILivetreamServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
-    createLivestream: ILivetreamServiceService_ICreateLivestream;
-    endLivestream: ILivetreamServiceService_IEndLivestream;
-    findLivestream: ILivetreamServiceService_IFindLivestream;
-    searchLivestream: ILivetreamServiceService_ISearchLivestream;
+interface ILivestreamServiceService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
+    createLivestream: ILivestreamServiceService_ICreateLivestream;
+    endLivestream: ILivestreamServiceService_IEndLivestream;
+    findLivestream: ILivestreamServiceService_IFindLivestream;
+    searchLivestream: ILivestreamServiceService_ISearchLivestream;
 }
 
-interface ILivetreamServiceService_ICreateLivestream extends grpc.MethodDefinition<livestream_service_pb.CreateLivestreamRequest, livestream_service_pb.Livestream> {
-    path: "/backend.livestream_service.LivetreamService/CreateLivestream";
+interface ILivestreamServiceService_ICreateLivestream extends grpc.MethodDefinition<livestream_service_pb.CreateLivestreamRequest, livestream_service_pb.Livestream> {
+    path: "/backend.livestream_service.LivestreamService/CreateLivestream";
     requestStream: false;
     responseStream: false;
     requestSerialize: grpc.serialize<livestream_service_pb.CreateLivestreamRequest>;
@@ -24,8 +24,8 @@ interface ILivetreamServiceService_ICreateLivestream extends grpc.MethodDefiniti
     responseSerialize: grpc.serialize<livestream_service_pb.Livestream>;
     responseDeserialize: grpc.deserialize<livestream_service_pb.Livestream>;
 }
-interface ILivetreamServiceService_IEndLivestream extends grpc.MethodDefinition<livestream_service_pb.EndLivestreamRequest, livestream_service_pb.Livestream> {
-    path: "/backend.livestream_service.LivetreamService/EndLivestream";
+interface ILivestreamServiceService_IEndLivestream extends grpc.MethodDefinition<livestream_service_pb.EndLivestreamRequest, livestream_service_pb.Livestream> {
+    path: "/backend.livestream_service.LivestreamService/EndLivestream";
     requestStream: false;
     responseStream: false;
     requestSerialize: grpc.serialize<livestream_service_pb.EndLivestreamRequest>;
@@ -33,8 +33,8 @@ interface ILivetreamServiceService_IEndLivestream extends grpc.MethodDefinition<
     responseSerialize: grpc.serialize<livestream_service_pb.Livestream>;
     responseDeserialize: grpc.deserialize<livestream_service_pb.Livestream>;
 }
-interface ILivetreamServiceService_IFindLivestream extends grpc.MethodDefinition<livestream_service_pb.FindLivestreamRequest, livestream_service_pb.Livestream> {
-    path: "/backend.livestream_service.LivetreamService/FindLivestream";
+interface ILivestreamServiceService_IFindLivestream extends grpc.MethodDefinition<livestream_service_pb.FindLivestreamRequest, livestream_service_pb.Livestream> {
+    path: "/backend.livestream_service.LivestreamService/FindLivestream";
     requestStream: false;
     responseStream: false;
     requestSerialize: grpc.serialize<livestream_service_pb.FindLivestreamRequest>;
@@ -42,8 +42,8 @@ interface ILivetreamServiceService_IFindLivestream extends grpc.MethodDefinition
     responseSerialize: grpc.serialize<livestream_service_pb.Livestream>;
     responseDeserialize: grpc.deserialize<livestream_service_pb.Livestream>;
 }
-interface ILivetreamServiceService_ISearchLivestream extends grpc.MethodDefinition<livestream_service_pb.SearchLivestreamsRequest, livestream_service_pb.Livestreams> {
-    path: "/backend.livestream_service.LivetreamService/SearchLivestream";
+interface ILivestreamServiceService_ISearchLivestream extends grpc.MethodDefinition<livestream_service_pb.SearchLivestreamsRequest, livestream_service_pb.Livestreams> {
+    path: "/backend.livestream_service.LivestreamService/SearchLivestream";
     requestStream: false;
     responseStream: false;
     requestSerialize: grpc.serialize<livestream_service_pb.SearchLivestreamsRequest>;
@@ -52,16 +52,16 @@ interface ILivetreamServiceService_ISearchLivestream extends grpc.MethodDefiniti
     responseDeserialize: grpc.deserialize<livestream_service_pb.Livestreams>;
 }
 
-export const LivetreamServiceService: ILivetreamServiceService;
+export const LivestreamServiceService: ILivestreamServiceService;
 
-export interface ILivetreamServiceServer extends grpc.UntypedServiceImplementation {
+export interface ILivestreamServiceServer extends grpc.UntypedServiceImplementation {
     createLivestream: grpc.handleUnaryCall<livestream_service_pb.CreateLivestreamRequest, livestream_service_pb.Livestream>;
     endLivestream: grpc.handleUnaryCall<livestream_service_pb.EndLivestreamRequest, livestream_service_pb.Livestream>;
     findLivestream: grpc.handleUnaryCall<livestream_service_pb.FindLivestreamRequest, livestream_service_pb.Livestream>;
     searchLivestream: grpc.handleUnaryCall<livestream_service_pb.SearchLivestreamsRequest, livestream_service_pb.Livestreams>;
 }
 
-export interface ILivetreamServiceClient {
+export interface ILivestreamServiceClient {
     createLivestream(request: livestream_service_pb.CreateLivestreamRequest, callback: (error: grpc.ServiceError | null, response: livestream_service_pb.Livestream) => void): grpc.ClientUnaryCall;
     createLivestream(request: livestream_service_pb.CreateLivestreamRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: livestream_service_pb.Livestream) => void): grpc.ClientUnaryCall;
     createLivestream(request: livestream_service_pb.CreateLivestreamRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: livestream_service_pb.Livestream) => void): grpc.ClientUnaryCall;
@@ -76,7 +76,7 @@ export interface ILivetreamServiceClient {
     searchLivestream(request: livestream_service_pb.SearchLivestreamsRequest, metadata: grpc.Metadata, options: Partial<grpc.CallOptions>, callback: (error: grpc.ServiceError | null, response: livestream_service_pb.Livestreams) => void): grpc.ClientUnaryCall;
 }
 
-export class LivetreamServiceClient extends grpc.Client implements ILivetreamServiceClient {
+export class LivestreamServiceClient extends grpc.Client implements ILivestreamServiceClient {
     constructor(address: string, credentials: grpc.ChannelCredentials, options?: Partial<grpc.ClientOptions>);
     public createLivestream(request: livestream_service_pb.CreateLivestreamRequest, callback: (error: grpc.ServiceError | null, response: livestream_service_pb.Livestream) => void): grpc.ClientUnaryCall;
     public createLivestream(request: livestream_service_pb.CreateLivestreamRequest, metadata: grpc.Metadata, callback: (error: grpc.ServiceError | null, response: livestream_service_pb.Livestream) => void): grpc.ClientUnaryCall;

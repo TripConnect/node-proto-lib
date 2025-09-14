@@ -72,9 +72,9 @@ function deserialize_backend_livestream_service_SearchLivestreamsRequest(buffer_
 }
 
 
-var LivetreamServiceService = exports.LivetreamServiceService = {
+var LivestreamServiceService = exports.LivestreamServiceService = {
   createLivestream: {
-    path: '/backend.livestream_service.LivetreamService/CreateLivestream',
+    path: '/backend.livestream_service.LivestreamService/CreateLivestream',
     requestStream: false,
     responseStream: false,
     requestType: livestream_service_pb.CreateLivestreamRequest,
@@ -85,7 +85,7 @@ var LivetreamServiceService = exports.LivetreamServiceService = {
     responseDeserialize: deserialize_backend_livestream_service_Livestream,
   },
   endLivestream: {
-    path: '/backend.livestream_service.LivetreamService/EndLivestream',
+    path: '/backend.livestream_service.LivestreamService/EndLivestream',
     requestStream: false,
     responseStream: false,
     requestType: livestream_service_pb.EndLivestreamRequest,
@@ -96,7 +96,7 @@ var LivetreamServiceService = exports.LivetreamServiceService = {
     responseDeserialize: deserialize_backend_livestream_service_Livestream,
   },
   findLivestream: {
-    path: '/backend.livestream_service.LivetreamService/FindLivestream',
+    path: '/backend.livestream_service.LivestreamService/FindLivestream',
     requestStream: false,
     responseStream: false,
     requestType: livestream_service_pb.FindLivestreamRequest,
@@ -107,7 +107,7 @@ var LivetreamServiceService = exports.LivetreamServiceService = {
     responseDeserialize: deserialize_backend_livestream_service_Livestream,
   },
   searchLivestream: {
-    path: '/backend.livestream_service.LivetreamService/SearchLivestream',
+    path: '/backend.livestream_service.LivestreamService/SearchLivestream',
     requestStream: false,
     responseStream: false,
     requestType: livestream_service_pb.SearchLivestreamsRequest,
@@ -119,4 +119,4 @@ var LivetreamServiceService = exports.LivetreamServiceService = {
   },
 };
 
-exports.LivetreamServiceClient = grpc.makeGenericClientConstructor(LivetreamServiceService);
+exports.LivestreamServiceClient = grpc.makeGenericClientConstructor(LivestreamServiceService);
